@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-import { connectSync, connectDB } from './helpers/dbConnect.js';
+import { connectDB } from './helpers/dbConnect.js';
 
 const server = express();
 //loading environment variables
@@ -56,7 +56,7 @@ server.use(express.static(path.join(__dirname, "../client/build" )))
     // connecting async
     connectDB(); // best practise
     mongoose.connection.on("open", () => {
-        console.log("connected to db");
+        console.log("connected to my db");
     });
     mongoose.connection.on("error", (error) => {
     console.log("Connection to MongoDB has faild ", error.message);

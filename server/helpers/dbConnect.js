@@ -8,7 +8,7 @@ dotenv.config();
 /**
  * connecting sync : for teaching pruposes
  */
-export const connectSync = () => {
+/* export const connectSync = () => {
     mongoose.connect(process.env.MONGO_URI)
         .then(
             () => console.log('connected to db')
@@ -19,13 +19,14 @@ export const connectSync = () => {
     
     // it waits for the promise to be evaluated ...
 }
-
+ */
 
 /**
  * connecting Async : best practise
  */
-export const connectDB = async() => {
+export const connectDB = async () => {
     try {
+
         await mongoose.connect(process.env.MONGO_URI);
         //all code here is evaluated  we don't wait
 

@@ -6,17 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm start --prefix server",
-    "heroku-postbuild": "cd client && npm install && npm run build && cd .. && cd server && npm install"
-
+    "dev": "concurrently \"cd client && npm start\"  \"cd server && node server\"",
+    "heroku-postbuild": "cd client && npm install && npm run build && cd.. && cd server && npm install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FbW-E09/mern_example.git"
+    "url": "https://github.com/atherahmad/mern-example"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FbW-E09/mern_example/issues"
+    "url": "https://github.com/atherahmad/mern-example/issues"
   },
-  "homepage": "https://github.com/FbW-E09/mern_example#readme"
+  "homepage": "https://mern-app-insta.herokuapp.com/",
+  "dependencies": {
+  },
+  "devDependencies": {
+    
+    "concurrently": "^7.3.0"
+  }
 }
