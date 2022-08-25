@@ -9,7 +9,6 @@ export const PostProvider = ({children}) =>{
 
     const [state, dispatch] = useReducer(postReducer, postState);
 
-    console.log("state in context", state)
 
 
     const getPosts = async () => {
@@ -67,7 +66,7 @@ export const PostProvider = ({children}) =>{
         updatePost,
         deletePost,
         likePost, 
-        state
+        posts: state
     }
 
     return <PostContext.Provider value={value}>{children}</PostContext.Provider>

@@ -30,6 +30,7 @@ export const AuthProvider = ({children}) =>{
         try{
             const response = await api.signup(formData)
             dispatch({type :"AUTH_SIGNUP", payload: response.data.savedUser}) 
+            localStorage.setItem("auth", response.data.token)
             navigate("/")
 
         }
@@ -45,6 +46,7 @@ export const AuthProvider = ({children}) =>{
             dispatch({type :"AUTH_VALID", payload: {username: response.data.username, id: response.data.id}})
         }
         catch(err){
+            localStorage.removeItem("auth")
             console.log(err)
         } 
 

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthForm from "./components/AuthForm/AuthForm.js";
 import { AuthProvider } from "./context/auth/authContext.js";
 import Posts from "./components/Posts/Posts.js";
+import { PostProvider } from "./context/posts/PostContext.js";
 
 const { Footer } = Layout;
 
@@ -19,7 +20,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/authform" element={<AuthForm />} />
-            <Route path="/posts" element={<Posts />} />
+            <Route path="/posts" element={<PostProvider><Posts /></PostProvider>} />
 
           </Routes>
           <Footer style={styles.footer}>2022 InstaBesties</Footer>

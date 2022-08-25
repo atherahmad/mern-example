@@ -66,7 +66,12 @@ export const login = (user) => {
  * 
  * @returns {Promise<JSON>}
  */
-export const fetchPosts = () => api.get("/posts/getposts");
+export const fetchPosts = () => api.get("/posts/getposts", {
+    headers:{
+        "Authorization" : `Bearer ${
+            localStorage.getItem("auth")}`
+    }
+});
 
 /**
  * 
